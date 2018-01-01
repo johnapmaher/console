@@ -11,8 +11,18 @@ class ConsoleController {
     @MVCMember @Nonnull
     ConsoleModel model
 
+    @inject
+    Evaluator evaluator
+    
     @ControllerAction
-    void click() {
-        model.clickCount++
+    void executeScript() {
+        model.enabled = false
+        def result
+        try {
+            result = evaluator.evaluate(model.scriptSource)
+        } finally {
+            model.enabled = true
+            model.scriptresults = result
+        }
     }
 }
