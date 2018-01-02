@@ -5,7 +5,7 @@ import org.codehaus.griffon.runtime.swing.DefaultSwingWindowDisplayHandler
 import javax.annotation.Nonnull
 import java.awt.Window
 
-import statis griffon.swing.support.SwingUtils.centerOnScren
+import static griffon.swing.support.SwingUtils.centerOnScren
 
 class CenteringWindowDisplayHandler extends DefaultSwingWindowDisplayHandler {
     @Override
